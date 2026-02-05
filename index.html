@@ -3,20 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Reel Intelligence Engine</title>
+
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
 
+</head>
 <body>
 
-<div class="bg-animation"></div>
+<div class="animated-bg"></div>
 
-<div class="app">
+<div class="container">
 
 <h1>Reel Intelligence Engine</h1>
-<p class="subtitle">Built from analysis of 1000+ viral reels</p>
+<p class="tagline">Built from 1000+ Viral Reel Patterns</p>
 
-<div class="panel">
+<div class="card">
 
 <label>Platform</label>
 <select id="platform">
@@ -29,7 +30,6 @@
 <select id="language">
 <option>English</option>
 <option>Hinglish</option>
-<option>Hindi</option>
 </select>
 
 <label>Niche</label>
@@ -54,13 +54,6 @@
 <option>New</option>
 <option>Growing</option>
 <option>Grown</option>
-</select>
-
-<label>Mode</label>
-<select id="mode">
-<option>Beginner</option>
-<option>Growth</option>
-<option>Monetization</option>
 </select>
 
 <button onclick="generatePlan()">Generate Plan</button>
