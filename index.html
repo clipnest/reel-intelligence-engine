@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reel Intelligence Engine</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="bg-animation"></div>
+
+<div class="app">
+
+<h1>Reel Intelligence Engine</h1>
+<p class="subtitle">Built from analysis of 1000+ viral reels</p>
+
+<div class="panel">
+
+<label>Platform</label>
+<select id="platform">
+<option>Instagram</option>
+<option>YouTube Shorts</option>
+<option>TikTok</option>
+</select>
+
+<label>Language</label>
+<select id="language">
+<option>English</option>
+<option>Hinglish</option>
+<option>Hindi</option>
+</select>
+
+<label>Niche</label>
+<select id="niche">
+<option>Motivation</option>
+<option>Business</option>
+<option>Editing</option>
+<option>Fitness</option>
+<option>Entertainment</option>
+<option>Luxury</option>
+<option>Romantic</option>
+</select>
+
+<label>Goal</label>
+<select id="goal">
+<option>Followers</option>
+<option>Sales</option>
+</select>
+
+<label>Account Size</label>
+<select id="size">
+<option>New</option>
+<option>Growing</option>
+<option>Grown</option>
+</select>
+
+<label>Mode</label>
+<select id="mode">
+<option>Beginner</option>
+<option>Growth</option>
+<option>Monetization</option>
+</select>
+
+<button onclick="generatePlan()">Generate Plan</button>
+
+</div>
+
+<div id="loader">Building your system...</div>
+
+<div id="output"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
