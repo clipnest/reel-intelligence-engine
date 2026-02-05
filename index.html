@@ -3,28 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Reel Intelligence Engine</title>
-
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 </head>
-<body>
 
-<div class="animated-bg"></div>
+<body class="dark">
 
-<div class="container">
+<div class="bg"></div>
 
+<div class="app">
+
+<div class="top-bar">
 <h1>Reel Intelligence Engine</h1>
+<button id="themeBtn">Light / Dark</button>
+</div>
+
 <p class="tagline">Built from 1000+ Viral Reel Patterns</p>
 
-<div class="card">
-
-<label>Platform</label>
-<select id="platform">
-<option>Instagram</option>
-<option>YouTube Shorts</option>
-<option>TikTok</option>
-</select>
+<div class="panel">
 
 <label>Language</label>
 <select id="language">
@@ -38,8 +34,8 @@
 <option>Business</option>
 <option>Editing</option>
 <option>Fitness</option>
-<option>Entertainment</option>
 <option>Luxury</option>
+<option>Entertainment</option>
 <option>Romantic</option>
 </select>
 
@@ -56,11 +52,13 @@
 <option>Grown</option>
 </select>
 
-<button onclick="generatePlan()">Generate Plan</button>
+<button onclick="generatePlan()">Generate 7 Day Plan</button>
 
 </div>
 
-<div id="loader">Building your system...</div>
+<div id="loader">Building Your System...</div>
+
+<button id="copyBtn">Copy Output</button>
 
 <div id="output"></div>
 
