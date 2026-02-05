@@ -1,120 +1,67 @@
-const tips = [
-"Post within first 2 hours of peak time",
-"Never upload without a hook",
-"Use subtitles always",
-"Keep reels under 35 seconds",
-"One idea per reel"
-];
-
 function generatePlan(){
 
 document.getElementById("loader").style.display="block";
-document.getElementById("output").innerHTML="";
+document.getElementById("output").innerText="";
 
 setTimeout(()=>{
 
-const platform = platformValue();
-const language = value("language");
-const niche = value("niche");
-const goal = value("goal");
-const size = value("size");
-const mode = value("mode");
+const niche = document.getElementById("niche").value;
+const goal = document.getElementById("goal").value;
+const size = document.getElementById("size").value;
+const lang = document.getElementById("language").value;
 
-const tip = tips[Math.floor(Math.random()*tips.length)];
+let output="";
 
-let output = `
-PLAN FOR: ${niche} | ${goal} | ${size} | ${platform}
+if(lang==="English"){
+output = `
+PLAN FOR ${niche} | ${goal} | ${size}
 
-----------------------------------
+HOOK IDEAS:
+• Nobody tells you this about ${niche}
+• Stop scrolling if you want growth
+• This mistake is killing your progress
 
-TODAY'S SMART TIP:
-${tip}
-
-----------------------------------
-
-REEL TYPE: HOOK
-
-5 Hook Ideas:
-1. Nobody tells you this about ${niche}
-2. Stop scrolling if you care about ${niche}
-3. This mistake is killing your ${niche} growth
-4. I tested this for 30 days
-5. You need to hear this today
-
-5 Caption Formulas:
-- Short pain + promise
-- Question + solution
-- Bold claim + proof
-- Relatable line + tip
-- Mistake + fix
-
-5 CTA:
-- Follow for more
-- Save this
-- Share this
-- Comment YES
-- DM me
-
-Hook Strength: STRONG
-Difficulty: EASY
-Best Time: 6PM - 9PM
-Duration: 20-30 sec
-Caption Length: 2-3 lines
-
-----------------------------------
-
-REEL TYPE: STORY
-
-Hook:
-How I changed my ${niche} journey
+CAPTION FORMULA:
+Problem → Promise → Tip → CTA
 
 CTA:
-Follow for part 2
+Follow for more
+Save this
 
-----------------------------------
-
-REEL TYPE: TUTORIAL
-
-Hook:
-Do this to grow in ${niche}
-
-CTA:
-Save this tutorial
-
-----------------------------------
-
-ENGAGEMENT CHECKLIST:
-✔ Hook in first 2 sec
-✔ Subtitles
-✔ Clear CTA
-✔ High contrast
-
-WARNING:
-Avoid copying viral videos exactly
-
-CONSISTENCY SCORE:
-80%
-
-SUCCESS PREDICTION:
-HIGH
-
-----------------------------------
+BEST TIME: 6PM - 9PM
+DURATION: 20-30 sec
 
 WHY THIS WORKS:
-This system removes thinking and gives execution.
-
+Removes confusion and speeds execution.
 `;
+}
+
+else{
+output = `
+PLAN FOR ${niche} | ${goal} | ${size}
+
+HOOK IDEAS:
+• Koi bhi ye baat nahi batata ${niche} ke baare me
+• Agar growth chahte ho toh ruk jao
+• Ye galti tumhari growth maar rahi hai
+
+CAPTION FORMULA:
+Problem → Promise → Tip → CTA
+
+CTA:
+Follow karo
+Save karo
+
+BEST TIME: 6PM - 9PM
+DURATION: 20-30 sec
+
+WHY THIS WORKS:
+Confusion khatam karta hai aur action fast karta hai.
+`;
+}
 
 document.getElementById("loader").style.display="none";
 document.getElementById("output").innerText=output;
 
-},1500);
-}
-
-function value(id){
-return document.getElementById(id).value;
-}
-
-function platformValue(){
-return document.getElementById("platform").value;
+},1200);
 }
