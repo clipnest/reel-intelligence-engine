@@ -1,67 +1,154 @@
+document.getElementById("themeBtn").onclick = ()=>{
+document.body.classList.toggle("light");
+document.body.classList.toggle("dark");
+}
+
+document.getElementById("copyBtn").onclick = ()=>{
+navigator.clipboard.writeText(
+document.getElementById("output").innerText
+);
+alert("Copied!");
+}
+
 function generatePlan(){
 
 document.getElementById("loader").style.display="block";
 document.getElementById("output").innerText="";
+document.getElementById("copyBtn").style.display="none";
 
 setTimeout(()=>{
 
-const niche = document.getElementById("niche").value;
-const goal = document.getElementById("goal").value;
-const size = document.getElementById("size").value;
-const lang = document.getElementById("language").value;
+const lang = val("language");
+const niche = val("niche");
+const goal = val("goal");
+const size = val("size");
 
-let output="";
+let text="";
 
 if(lang==="English"){
-output = `
-PLAN FOR ${niche} | ${goal} | ${size}
+text=`
+PLAN FOR: ${niche} | ${goal} | ${size}
 
-HOOK IDEAS:
-• Nobody tells you this about ${niche}
-• Stop scrolling if you want growth
-• This mistake is killing your progress
+-----------------------
+7 DAY CONTENT PLAN
+-----------------------
 
-CAPTION FORMULA:
-Problem → Promise → Tip → CTA
+DAY 1 – Hook Reel
+Hook: Nobody tells you this about ${niche}
+CTA: Follow for more
 
-CTA:
-Follow for more
-Save this
+DAY 2 – Tutorial Reel
+Hook: Do this to grow faster
+CTA: Save this
 
-BEST TIME: 6PM - 9PM
-DURATION: 20-30 sec
+DAY 3 – Relatable Reel
+Hook: If you feel stuck, read this
+CTA: Comment YES
 
-WHY THIS WORKS:
-Removes confusion and speeds execution.
+DAY 4 – Proof Reel
+Hook: I tested this for 30 days
+CTA: Follow
+
+DAY 5 – Quote Reel
+Hook: Read this twice
+CTA: Share
+
+DAY 6 – Mistake Reel
+Hook: Stop doing this
+CTA: Save
+
+DAY 7 – Motivation Reel
+Hook: Your sign to start
+CTA: Follow
+
+-----------------------
+HOOK FORMULA
+-----------------------
+Curiosity + Pain + Promise
+
+-----------------------
+CAPTION STRUCTURE
+-----------------------
+Problem → Tip → Result → CTA
+
+-----------------------
+BEST SETTINGS
+-----------------------
+Duration: 20-30 sec  
+Posting Time: 6PM-9PM  
+
+-----------------------
+WHY THIS WORKS
+-----------------------
+Removes confusion and gives daily execution.
 `;
-}
+}else{
+text=`
+PLAN FOR: ${niche} | ${goal} | ${size}
 
-else{
-output = `
-PLAN FOR ${niche} | ${goal} | ${size}
+-----------------------
+7 DAY CONTENT PLAN
+-----------------------
 
-HOOK IDEAS:
-• Koi bhi ye baat nahi batata ${niche} ke baare me
-• Agar growth chahte ho toh ruk jao
-• Ye galti tumhari growth maar rahi hai
+DAY 1 – Hook Reel
+Hook: Koi ye baat nahi batata
+CTA: Follow karo
 
-CAPTION FORMULA:
-Problem → Promise → Tip → CTA
+DAY 2 – Tutorial Reel
+Hook: Ye karo grow karne ke liye
+CTA: Save karo
 
-CTA:
-Follow karo
-Save karo
+DAY 3 – Relatable Reel
+Hook: Agar stuck ho toh suno
+CTA: Comment YES
 
-BEST TIME: 6PM - 9PM
-DURATION: 20-30 sec
+DAY 4 – Proof Reel
+Hook: 30 din test kiya
+CTA: Follow
 
-WHY THIS WORKS:
-Confusion khatam karta hai aur action fast karta hai.
+DAY 5 – Quote Reel
+Hook: Ye line yaad rakhna
+CTA: Share
+
+DAY 6 – Mistake Reel
+Hook: Ye galti mat karo
+CTA: Save
+
+DAY 7 – Motivation Reel
+Hook: Tum kar sakte ho
+CTA: Follow
+
+-----------------------
+HOOK FORMULA
+-----------------------
+Curiosity + Pain + Promise
+
+-----------------------
+CAPTION STRUCTURE
+-----------------------
+Problem → Tip → Result → CTA
+
+-----------------------
+BEST SETTINGS
+-----------------------
+Duration: 20-30 sec  
+Posting Time: 6PM-9PM  
+
+-----------------------
+WHY THIS WORKS
+-----------------------
+Confusion khatam karta hai aur action deta hai.
 `;
 }
 
 document.getElementById("loader").style.display="none";
-document.getElementById("output").innerText=output;
+document.getElementById("output").innerText=text;
+document.getElementById("copyBtn").style.display="block";
 
 },1200);
+
+}
+
+function val(id){
+return document.getElementById(id).value;
 }
