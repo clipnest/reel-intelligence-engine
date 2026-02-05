@@ -6,64 +6,63 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#070712;
+background:#060612;
 color:white;
 min-height:100vh;
-overflow-y:auto;
 display:flex;
 justify-content:center;
 align-items:center;
+overflow-y:auto;
 }
 
-.bg-animation{
+.animated-bg{
 position:fixed;
-inset:0;
-background:
-radial-gradient(circle at 20% 20%,#5b2cff33,transparent),
-radial-gradient(circle at 80% 80%,#00ffd533,transparent);
-animation:movebg 20s infinite alternate;
+width:200%;
+height:200%;
+background:linear-gradient(45deg,#7b00ff,#00ffd5,#ff00aa);
+animation:bgmove 15s infinite alternate;
 z-index:-1;
+filter:blur(120px);
 }
 
-@keyframes movebg{
-from{transform:scale(1);}
-to{transform:scale(1.3);}
+@keyframes bgmove{
+0%{transform:translate(0,0);}
+100%{transform:translate(-50%,-50%);}
 }
 
-.app{
+.container{
 width:420px;
-background:#0f0f1f;
-padding:25px;
-border-radius:18px;
-box-shadow:0 0 25px #6a00ff55;
+padding:20px;
+background:#0e0e20;
+border-radius:20px;
+box-shadow:0 0 25px #7b00ff;
 }
 
 h1{
 text-align:center;
-font-size:26px;
 }
 
-.subtitle{
+.tagline{
 text-align:center;
 font-size:13px;
 color:#aaa;
 margin-bottom:20px;
 }
 
-.panel label{
-display:block;
-margin-top:10px;
+label{
 font-size:13px;
+margin-top:10px;
+display:block;
 }
 
 select{
 width:100%;
 padding:10px;
-margin-top:5px;
 background:#1a1a30;
-color:white;
 border:none;
 border-radius:8px;
+color:white;
+margin-top:5px;
 }
 
 button{
@@ -73,7 +72,6 @@ padding:12px;
 background:linear-gradient(90deg,#7b00ff,#00ffd5);
 border:none;
 border-radius:10px;
-color:black;
 font-weight:700;
 cursor:pointer;
 transition:0.3s;
@@ -94,10 +92,10 @@ color:#00ffd5;
 
 #output{
 margin-top:20px;
-white-space:pre-line;
-font-size:14px;
 background:#111130;
 padding:15px;
 border-radius:10px;
+white-space:pre-line;
+font-size:14px;
 }
 
